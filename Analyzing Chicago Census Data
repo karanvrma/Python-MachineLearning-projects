@@ -88,3 +88,12 @@ cur.executescript('''insert into censorreport(Community_area_no,Community_area_N
             	insert into censorreport(Community_area_no,Community_area_Name,Percent_of_Housing_Crowded,Percent_of_households_below_poverty,Percent_aged_above_sixteen_unemployed,Percent_Aged_above_twentyfive_without_high_school_diploma,Percent_Aged_under_eighteen_or_after_sixtyfour,Per_Capita_income,Hardship_Index) values(75,"Morgan Park",0.8,13.2,15,10.8,40.3,27149,30);
             	insert into censorreport(Community_area_no,Community_area_Name,Percent_of_Housing_Crowded,Percent_of_households_below_poverty,Percent_aged_above_sixteen_unemployed,Percent_Aged_above_twentyfive_without_high_school_diploma,Percent_Aged_under_eighteen_or_after_sixtyfour,Per_Capita_income,Hardship_Index) values(76,"O'Hare",3.6,15.4,7.1,10.9,30.3,25828,24);
             	insert into censorreport(Community_area_no,Community_area_Name,Percent_of_Housing_Crowded,Percent_of_households_below_poverty,Percent_aged_above_sixteen_unemployed,Percent_Aged_above_twentyfive_without_high_school_diploma,Percent_Aged_under_eighteen_or_after_sixtyfour,Per_Capita_income,Hardship_Index) values(77,"Edgewater",4.1,18.2,9.2,9.7,23.8,33385,19);''')
+              
+              
+import seaborn as sns
+plot=sns.joinplot(x='Percent_of_Housing_Crowded',y='Hardship_Index',data=df)
+plot=sns.set_style('Whitegrid')
+x=sns.boxplot(x=df['Per_Capita_income'])
+plot=sns.joinplot(x='Per_Capita_income',y='Hardship_Index',data=df)
+plot=sns.joinplot(x='Percent_of_Housing_Crowded',y='Per_Capita_income',data=df)
+
